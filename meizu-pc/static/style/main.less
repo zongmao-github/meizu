@@ -1,0 +1,246 @@
+p,a,li,ul{
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#app,
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+body {
+  font-family: 'PingFang SC', "Helvetica Neue", Helvetica, "microsoft yahei", arial, STHeiTi, sans-serif;
+}
+
+a {
+  text-decoration: none
+}
+
+.form-box {
+  width: 600px;
+}
+
+.form-box .line {
+  text-align: center;
+}
+
+.iconfont-color {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+// 主要页面
+.common-container{
+  font-size: 14px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .common-header{
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    .search-info-container{
+      flex: 1;
+    }
+    .common-buttons{
+      margin-left: auto;
+    }
+  }
+  .common-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    padding: 10px 10px 0px 10px;
+    border: 1px solid #F5F5F6;
+    .common-table-title{
+      text-align: center;
+      margin: 5px 0;
+    }
+    .common-table{
+      flex: 1;
+      padding-bottom: 20px;
+    }
+    // 表格样式
+    .el-table--border:after,.el-table--group:after,.el-table:before {
+      background-color: @theme-color !important;
+    }
+    .el-table--border,.el-table--group {
+      border-color: @theme-color !important;
+    }
+    .el-table td,.el-table th.is-leaf {
+      border-bottom: 1px solid @theme-color !important;
+    }
+    .el-table--border th,.el-table--border th.gutter:last-of-type {
+      border-bottom: 1px solid @theme-color !important;
+    }
+    .el-table--border td,.el-table--border th {
+      border-right: 1px solid @theme-color !important;
+    }
+    .el-table th, .el-table tr th {
+        background-color: #eef1f6 !important;
+    }
+    
+    .common-page{
+      text-align: center;
+      position: relative;
+      margin: 10px 0;
+      .important-tips{
+        position: absolute;
+        top: 50%;
+        float: left;
+        transform: translate(0,-50%);
+        font-size: 13px;
+        top: 50%;
+        left: 0;
+        transform: translate(0,-50%);
+        cursor: pointer;
+      }
+    }
+  }
+
+  // 查看文件
+  .look-file-btn{
+    cursor: pointer;
+  }
+  
+}
+
+// 弹窗
+.common-dialog {
+  .el-dialog {
+    border-radius: 7px;
+    max-height: 75%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    .el-dialog__header {
+      text-align: center;
+    }
+    .el-dialog__body{
+      overflow: auto;
+      flex: 1;
+      padding: 10px 20px;
+      box-sizing: border-box;
+    }
+    .el-form-item__label{
+      text-align: left; // 表单文字朝左
+      padding-left: 20px;
+    }
+    .el-dialog__footer {
+        text-align: center;
+    }
+  }
+}
+
+
+
+// 选项卡切换
+.common-radio-select{
+  margin-right: 10px;
+}
+
+.dialog-type{
+  font-size: 16px;
+  .type-details{
+    padding: 8px 10px;
+  }
+  .type-selected{
+  }
+}
+
+// 台账样式
+.stand-book-container{
+  .stand-name{
+      text-align: center;
+      font-size: 18px;
+  }
+  .stand-box{
+      .table-base{
+          width: 100%;
+          border: 1px solid transparent;
+          border-collapse: collapse;
+          margin-bottom: 20px;
+          margin-top: 10px;
+          tbody{
+              .check-content{
+                  width: 80%;
+                  text-align: left;
+              }
+          }
+          th,td{
+              border: 1px solid transparent;
+              text-align: center;
+              padding: 14px;
+          }
+          .text-lf{
+              text-align: left;
+          }
+          .date{
+              text-align: right;
+          }
+          .height-more{
+              height: 150px;
+          }
+          .check-name{
+            width: 20%;
+          }
+      }
+      .file-box{
+          display: flex;
+          margin-bottom: 10px;
+          .file-name{
+              display: inline-block;
+              width: 100px;
+          }
+      }
+  }
+}
+
+// 名字加背景色替换头像
+.name-img{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  line-height: 100px;
+  text-align: center;
+  font-size: 25px;
+}
+.big-name-img{
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  font-size: 50px;
+}
+
+// 流程步骤名
+.common-step-name{
+  margin: 20px 0;
+}
+.common-border-line{
+  width: 100%;
+  border-bottom: 1px dashed;
+}
+//tooltip
+.el-tooltip__popper{
+  font-size: 16px;
+  max-width: 300px!important;
+  text-align: justify;
+  text-justify: newspaper;
+  word-break: break-all;
+  line-height: 20px;
+}

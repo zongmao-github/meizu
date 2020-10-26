@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+// 清除原有样式
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none
+}
+
+//变量 方法等
+.flex-col(@x){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: @x;
+}
+.flex-row(@x){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: @x;
+}
+.text-hide(){ //文字超宽隐藏
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+
+// 统一样式
+@theme-color: #008cff;
+@active-color: #008cff;

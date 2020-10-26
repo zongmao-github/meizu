@@ -1,14 +1,17 @@
 <template>
-    <div class="home-container">
-        this is home page!
+    <div class="about-container">
+        this is about page!
     </div>
 </template>
 <script>
 export default {
     data(){
         return{
-            
+
         }
     }
 }
 </script>
+<style lang="less">
+
+</style>

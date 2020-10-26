@@ -1,13 +1,13 @@
 <template>
-    <div class="home-container">
-        this is home page!
+    <div>
+        this is 404 page!
     </div>
 </template>
 <script>
 export default {
     data(){
         return{
-            
+
         }
     }
 }
