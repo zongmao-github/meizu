@@ -82,7 +82,7 @@ export default function request(url, data = {}, method = 'POST', type){
                     vue.$router.push('/login');
                 }
             }else{
-                resolve(res.data);
+                resolve(res);
             }
         }).catch(error=>{
             if(JSON.stringify(error).includes('401')){

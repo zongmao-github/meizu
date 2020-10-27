@@ -12,17 +12,17 @@ Vue.use(ElementUI)
 
 
 // 使用钩子函数对权限设置跳转
-//必须在new Vue前面
-router.beforeEach((to, from, next)=>{
-    const token = Cookie.get('mz_token');
-    if (!token && to.path !== '/login'){
-        next('/login');
-    }else if (false){
-        next('403');
-    }else {
-        next();
-    }
-})
+// 必须在new Vue前面
+// router.beforeEach((to, from, next)=>{
+//     const token = Cookie.get('mz_token');
+//     if (!token && to.path !== '/login'){
+//         next('/login');
+//     }else if (false){
+//         next('403');
+//     }else {
+//         next();
+//     }
+// })
 let vue = new Vue({
   router,
   render: h => h(App)
