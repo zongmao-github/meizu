@@ -1,10 +1,12 @@
 <template>
     <div class="detail-container">
-        this is detail page!
+        <item-title/>
     </div>
 </template>
 <script>
+import itemTitle from "@/views/detail/subpage/itemTitle";
 export default {
+    components: {itemTitle},
     data(){
         return{
 
@@ -13,5 +15,7 @@ export default {
 }
 </script>
 <style lang="less">
+.detail-container{
 
+}
 </style>

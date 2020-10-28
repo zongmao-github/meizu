@@ -2,7 +2,7 @@
     <div class="m-header-container">
         <div class="m-nav-menu">
             <div class="m-logo-box">
-                <img :src="logoImg" alt="">
+                <img style="cursor:pointer;" @click="$router.push('/home')" :src="logoImg" alt="">
             </div>
             <div class="m-menu-box">
                 <ul>
@@ -46,12 +46,9 @@
                 </el-dropdown>
                 <el-dropdown>
                     <i class="el-icon-shopping-cart-1 public-icon"></i>
-                    <el-dropdown-menu slot="dropdown" style="padding: 88px">
-<!--                        <el-dropdown-item>黄金糕</el-dropdown-item>-->
-<!--                        <el-dropdown-item>狮子头</el-dropdown-item>-->
-<!--                        <el-dropdown-item>螺蛳粉</el-dropdown-item>-->
+                    <el-dropdown-menu slot="dropdown" style="padding: 10px">
                         <span v-if="!isLogin">登录即可查看您的购物车内容哦！</span>
-                        <span v-if="isLogin">暂无商品</span>
+                        <show-shop-car :is-login="isLogin" :shop-car-data="shopCarData"/>
                     </el-dropdown-menu>
                 </el-dropdown>
             </div>
@@ -64,36 +61,51 @@
                 v-if="showSome || showSomeSelf"
                 :type="type"/>
         </transition>
-        <div class="m-show-imgs">
-            <el-carousel :interval="timeSpace" arrow="never">
-                <el-carousel-item v-for="(item, index) in homeImg" :key="index">
-                    <router-link to="detail">
-                        <img :src="item" alt="">
-                    </router-link>
-                </el-carousel-item>
-            </el-carousel>
-        </div>
     </div>
 </template>
 <script>
 import showSome from "@/components/showSome";
+import showShopCar from "@/components/showShopCar";
 export default {
-    components: { showSome },
+    components: { showSome, showShopCar },
     data() {
         return {
+            shopCarData: [
+                {
+                    img: require('@/assets/phone/meizu_17_1.png'),
+                    name: '魅族17',
+                    introduce: '公开全网通版 AG梦幻独角兽 8+128',
+                    price: '￥3699',
+                    num: 1
+                },
+                {
+                    img: require('@/assets/phone/meizu_17_1.png'),
+                    name: '魅族17',
+                    introduce: '公开全网通版 AG梦幻独角兽 8+128',
+                    price: '￥3699',
+                    num: 1
+                },
+                {
+                    img: require('@/assets/phone/meizu_17_1.png'),
+                    name: '魅族17',
+                    introduce: '公开全网通版 AG梦幻独角兽 8+128',
+                    price: '￥3699',
+                    num: 1
+                },
+                {
+                    img: require('@/assets/phone/meizu_17_1.png'),
+                    name: '魅族17',
+                    introduce: '公开全网通版 AG梦幻独角兽 8+128',
+                    price: '￥3699',
+                    num: 1
+                },
+            ],
             isLogin: this.Cookie.get('mz_token'),
             showSome: false,//是否显示菜单下详情
             showSomeSelf: false,
-            homeImg:[
-                require('@/assets/home/home_1.png'),
-                require('@/assets/home/home_2.png'),
-                require('@/assets/home/home_3.png'),
-                require('@/assets/home/home_4.png'),
-            ],
             type: '',
             img: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
             noImg: require('@/assets/noData.png'),
-            timeSpace: 6666,//走马灯切换间隔时间
             logoImg: require('@/assets/meizu_logo.png'),
             searchInput: '',//搜索输入数据
             menuData: [
@@ -166,7 +178,7 @@ export default {
 <style lang="less">
 .m-header-container {
     width: 100%;
-    height: 550px;
+    //height: 550px;
     background: #fff;
     display: flex;
     flex-flow: column;
@@ -228,39 +240,6 @@ export default {
         position: absolute;
         top: 80px;
         z-index: 222;
-    }
-    .m-show-imgs {
-        width: 100%;
-        height: 0;
-        min-height: 0;
-        flex: 1;
-
-        .el-carousel {
-            width: 100%;
-            height: 100%;
-            .el-carousel__indicators{
-                .el-carousel__indicator{
-                    .el-carousel__button{
-                        width: 10px;
-                        height: 10px;
-                        border-radius: 50%;
-                    }
-                }
-            }
-        }
-
-        .el-carousel__container {
-            width: 100%;
-            height: 100%;
-        }
-
-        .el-carousel__item {
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
     }
     .public-icon{
         font-size: 24px;

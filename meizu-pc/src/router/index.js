@@ -22,6 +22,16 @@ const routes = [
                 // this generates a separate chunk (about.[hash].js) for this route
                 // which is lazy-loaded when the route is visited.
                 component: () => import(/* webpackChunkName: "about" */ '../views/about/index')
+            },
+            {
+                path: '/detail',
+                name: 'detail',
+                component: ()=> import('@/views/detail/index')
+            },
+            {
+                path: '/shopCar',
+                name: 'shopCar',
+                component: ()=> import('@/views/shopCar/index')
             }
         ]
     },
@@ -39,6 +49,11 @@ const routes = [
         path: '403',
         name: '403',
         component: ()=> import('@/views/403')
+    },
+    {
+        path: '*',
+        name: '404',
+        redirect: '/404'
     }
 ]
 
