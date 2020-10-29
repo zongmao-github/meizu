@@ -22,7 +22,7 @@
                             <p class="login-title">登录Flyme账号</p>
                         </el-form-item>
                         <el-form-item prop="phone">
-                            <el-input style="width: 250px;" placeholder="手机号" v-model="phone" :disabled="countDown > 0">
+                            <el-input style="width: 250px;" placeholder="手机号" v-model="codeForm.phone" :disabled="countDown > 0">
                                 <el-select style="width: 70px;" v-model="phoneStart" slot="prepend" placeholder="请选择">
                                     <el-option label="+86" value="+86"></el-option>
                                     <el-option label="+88" value="+88"></el-option>
@@ -180,9 +180,9 @@ export default {
                     //     }
                     // })
                     this.Cookie.set("mz_token", 'meizu_' + this.codeForm.phone, {expires: 1});
+                    this.$store.commit('isLogin');
                     this.$router.push('home');
                 } else {
-                    console.log('error submit!!');
                     return false;
                 }
             });
@@ -212,7 +212,7 @@ export default {
                     // })
                     setTimeout(function (){
                         _this.codeForm.vCode = code;
-                    })
+                    },10 * 1000);
                     setInterval(function (){
                         if (_this.countDown === 0){
                             clearTimeout();

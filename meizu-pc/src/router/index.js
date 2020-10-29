@@ -11,11 +11,13 @@ const routes = [
         redirect: '/home',
         children: [
             {
+                //首页
                 path: '/home',
                 name: 'Home',
                 component: () => import("../views/home/index")
             },
             {
+                //关于
                 path: '/about',
                 name: 'About',
                 // route level code-splitting
@@ -24,18 +26,27 @@ const routes = [
                 component: () => import(/* webpackChunkName: "about" */ '../views/about/index')
             },
             {
+                //详情
                 path: '/detail',
                 name: 'detail',
                 component: ()=> import('@/views/detail/index')
             },
             {
+                //购物车
                 path: '/shopCar',
                 name: 'shopCar',
                 component: ()=> import('@/views/shopCar/index')
+            },
+            {
+                //订单
+                path: '/order',
+                name: 'order',
+                component: ()=> import('@/views/order/index')
             }
         ]
     },
     {
+        //登录页
         path: '/login',
         name: 'name',
         component: () => import('@/views/login/index')

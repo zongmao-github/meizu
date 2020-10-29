@@ -8,11 +8,11 @@
                     <p>{{item.name}}</p>
                     <p>{{item.introduce}}</p>
                 </div>
-                <p class="shop-price">{{item.price}}</p>
+                <p class="shop-price">￥{{item.price.toFixed(2)}}</p>
 <!--                <p class="shop-num">{{item.num}}</p>-->
             </li>
         </ul>
-        <el-button @click="$router.push('/shopCar')" type="danger" style="float: right;" size="mini">去结算</el-button>
+        <el-button @click="$router.push('/shopCar')" type="primary" style="float: right;" size="mini">去购物车</el-button>
     </div>
 </template>
 <script>
@@ -44,17 +44,13 @@ export default {
             margin-bottom: 10px;
             img{
                 width: 88px;
-                margin-right: 20px;
             }
             .shop-info{
-                margin-right: 20px;
+                width: 250px;
             }
             .shop-price{
                 margin-right: 20px;
                 color: red;
-            }
-            .shop-num{
-                margin-right: 20px;
             }
         }
     }

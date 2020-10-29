@@ -1,5 +1,8 @@
 <template>
-    <div class="show-some-container">
+    <div class="show-some-container"
+         @mouseover="handleMouse(true)"
+         @mouseout="handleMouse(false)"
+    >
         <ul class="show-some-list">
             <li class="app-download" v-if="type === 'App下载'">
                 <img src="../assets/app/app_1.jpg" alt="">
@@ -111,6 +114,11 @@ export default {
                     price: '￥199'
                 },
             ]
+        }
+    },
+    methods:{
+        handleMouse(val){
+            this.$emit('showHandleSelf',val);
         }
     }
 }
