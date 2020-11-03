@@ -2,7 +2,7 @@
     <div class="m-header-container">
         <div class="m-nav-menu">
             <div class="m-logo-box">
-                <img style="cursor:pointer;" @click="$router.push('/home')" :src="logoImg" alt="">
+                <img style="cursor:pointer;" @click="$router.push('/home')" v-lazy="logoImg" alt="">
             </div>
             <div class="m-menu-box">
                 <ul>

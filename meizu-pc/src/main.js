@@ -6,10 +6,12 @@ import 'element-ui/lib/theme-chalk/index.css';
 import request from '@/common/js/axios';
 import Cookie from 'js-cookie';
 import store from '@/store/index';
+import VueLazyload from "vue-lazyload";
 Vue.prototype.$http = request;
 Vue.prototype.Cookie = Cookie;
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+Vue.use(VueLazyload);
 
 
 // 使用钩子函数对权限设置跳转

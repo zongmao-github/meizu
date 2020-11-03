@@ -18,7 +18,7 @@
                     label="">
                     <template slot-scope="scope">
                         <div style="display: flex; align-items: center;">
-                            <img style="width: 100px;" :src="scope.row.img" alt="">
+                            <img style="width: 100px;" v-lazy="scope.row.img" alt="">
                             <div>
                                 <h3>{{scope.row.name}}</h3>
                                 <p>{{scope.row.introduce}}</p>

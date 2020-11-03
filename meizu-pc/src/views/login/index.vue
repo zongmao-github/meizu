@@ -111,13 +111,13 @@
                 </ul>
                 <ul class="contact-info">
                     <li>
-                        <img src="../../../static/iconfont/weibo.svg"/>
+                        <img v-lazy="'../../../static/iconfont/weibo.svg'"/>
                     </li>
                     <li>
-                        <img src="../../../static/iconfont/weixin.svg"/>
+                        <img v-lazy="'../../../static/iconfont/weixin.svg'"/>
                     </li>
                     <li>
-                        <img src="../../../static/iconfont/qq.svg"/>
+                        <img v-lazy="'../../../static/iconfont/qq.svg'"/>
                     </li>
                 </ul>
             </div>

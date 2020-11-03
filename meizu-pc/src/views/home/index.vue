@@ -5,7 +5,7 @@
             <ul class="first-box-list">
                 <li v-for="(item, index) in firstBoxImgs" :key="index">
                     <el-link :underline="false" href="/detail">
-                        <img :src="item.img" :alt="item.title">
+                        <img v-lazy="item.img" :alt="item.title">
                         <h2 class="title">{{ item.title }}</h2>
                         <p class="content">{{ item.content }}</p>
                     </el-link>
@@ -24,7 +24,7 @@
                                 <p class="phone-content">{{ item.content }}</p>
                                 <p class="phone-price">{{ item.price }}</p>
                                 <div class="phone-img">
-                                    <img :src="item.img" :alt="item.title">
+                                    <img v-lazy="item.img" :alt="item.title">
                                 </div>
                             </div>
                         </el-link>

@@ -3,7 +3,7 @@
         <span v-if="shopCarData.length < 1">暂无商品</span>
         <ul v-else>
             <li v-for="(item, index) in shopCarData" :key="index">
-                <img :src="item.img" :alt="item.name">
+                <img v-lazy="item.img" :alt="item.name">
                 <div class="shop-info">
                     <p>{{item.name}}</p>
                     <p>{{item.introduce}}</p>

@@ -5,7 +5,7 @@
                 <el-link :underline="false" href="/detail">
                     <div class="a-box">
                         <div class="item-img">
-                            <img :src="item.img" :alt="item.content">
+                            <img v-lazy="item.img" :alt="item.content">
                         </div>
                         <div class="text-info">
                             <p class="user-info">

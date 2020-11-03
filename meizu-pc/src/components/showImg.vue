@@ -3,7 +3,7 @@
         <el-carousel :interval="timeSpace" arrow="never">
             <el-carousel-item v-for="(item, index) in homeImg" :key="index">
                 <router-link to="detail">
-                    <img :src="item" alt="">
+                    <img v-lazy="item" alt="">
                 </router-link>
             </el-carousel-item>
         </el-carousel>

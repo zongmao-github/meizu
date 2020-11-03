@@ -64,7 +64,7 @@
                 <div class="one-order-content">
                     <ul class="common-ul">
                         <li class="one">
-                            <img :src="item.shopInfo.img" :alt="item.shopInfo.content">
+                            <img v-lazy="item.shopInfo.img" :alt="item.shopInfo.content">
                         </li>
                         <li class="two">
                             <p>{{item.shopInfo.content}}</p>

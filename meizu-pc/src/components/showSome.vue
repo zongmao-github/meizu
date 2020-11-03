@@ -5,11 +5,11 @@
     >
         <ul class="show-some-list">
             <li class="app-download" v-if="type === 'App下载'">
-                <img src="../assets/app/app_1.jpg" alt="">
+                <img v-lazy="'../assets/app/app_1.jpg'" alt="">
             </li>
             <li v-else v-for="(item, index) in tempData" :key="index">
                 <el-link :underline="false" href="detail">
-                    <img class="item-img" :src="item.img" :alt="item.title">
+                    <img class="item-img" v-lazy="item.img" :alt="item.title">
                     <p class="title">{{item.title}}</p>
                     <p class="price">{{item.price}}</p>
                 </el-link>

@@ -8,7 +8,7 @@
                 <el-link :underline="false" href="/detail">
                     <div class="a-box">
                         <div class="item-img">
-                            <img v-if="!isFirst || index != 0" :src="item.img" :alt="item.title">
+                            <img v-if="!isFirst || index != 0" v-lazy="item.img" :alt="item.title">
                         </div>
                         <h2 :class="['item-title', isFirst && index === 0 ? 'isFirstWhite' : '']">{{ item.title }}</h2>
                         <p :class="['item-content', isFirst && index === 0 ? 'isFirstWhite' : '']">{{ item.content }}</p>

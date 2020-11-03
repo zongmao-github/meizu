@@ -16,13 +16,13 @@
             <div class="show-item-box public-box">
                 <div class="show-item-img">
                     <div class="show-big-img">
-                        <img :src="bigImg" alt="">
+                        <img v-lazy="bigImg" alt="">
                     </div>
                     <div class="show-all-img">
                         <ul>
                             <li style="cursor: pointer;" v-for="(item, index) in allImg" :key="index"
                                 @click="changeBigImg(item)">
-                                <img :src="item" alt="">
+                                <img v-lazy="item" alt="">
                             </li>
                         </ul>
                     </div>
@@ -177,7 +177,7 @@
         </div>
         <div class="show-img-detail public-box">
             <h1>商品详情</h1>
-            <img class="item-img" v-for="(item, index) in itemImgs" :key="index" :src="item" alt="">
+            <img class="item-img" v-for="(item, index) in itemImgs" :key="index" v-lazy="item" alt="">
         </div>
         <m-footer/>
     </div>

@@ -1,7 +1,7 @@
 <template>
     <div class="show-item-container">
         <h1>{{title}}</h1>
-        <img v-if="img" :src="img" alt="">
+        <img v-if="img" v-lazy="img" alt="">
     </div>
 </template>
 <script>
